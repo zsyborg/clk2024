@@ -18,7 +18,7 @@ module.exports = {
   },
   rules: {
     "testing-library/prefer-screen-queries": "off",
-    "@next/next/no-html-link-for-pages": "on",
+    "@next/next/no-html-link-for-pages": 1,
     "@next/next/no-img-element": "on",
     "@typescript-eslint/no-unused-vars": [
       "warn",
