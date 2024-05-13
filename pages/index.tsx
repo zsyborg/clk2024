@@ -274,7 +274,6 @@ setTimeout(() => {
 
   return (
     <div className="mx-auto flex w-full max-w-md flex-col gap-6 justify-center">
-      <ConnectWalletButton/>
       {/* <Trophy /> */}
       <div className="container">
       <div className="row flex-row flex justify-center items-center" style={{justifyContent:"center"}}>
@@ -291,6 +290,7 @@ setTimeout(() => {
         {/* <MessageBar message={"Connect Wallet To Start Playing"} type={"INVITE"} /> */}
         {/* <LoadingBar percentage={50} /> */}
         {/* <CoinClicker /> */}
+      <ConnectWalletButton/>
 
 
         <div className="container">
