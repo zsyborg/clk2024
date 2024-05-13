@@ -1,0 +1,115 @@
+.container {
+    width: 100%;
+    overflow: hidden; 
+    border-radius: 20px;
+    backdrop-filter: blur(10px); 
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.097) 0%, rgba(255, 255, 255, 0.028) 100%);
+    margin-bottom: 90px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Removes space between borders */
+    border-radius: 20px;
+    overflow: hidden; /* Ensures the border-radius clips the contents */
+}
+
+.small, .large {
+    text-align: center;
+    padding: 20px;
+    background: inherit; /* Inherits the gradient background */
+
+}
+
+.large {
+    flex: 2 0 60%; /* Takes up more space */
+    font-size: 90%; /* Larger font-size */
+}
+
+.small {
+    flex: 1 0 20%; /* Takes up less space */
+    font-size: 90%; /* Smaller font-size */
+}
+
+/* Remove the border on the last column */
+.table td:last-child {
+    border-right: none;
+}
+
+.coins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dailyContainer{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 10px;
+
+}
+
+.dailyContainer .place{
+    height: auto;
+    width: 27px;
+}
+.dailyContainer .username{
+
+    margin: 0 ;
+}
+.dailyContainer .profile{
+    height: auto;
+    width: 42px;
+}
+
+.monthlyContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap: 5px;  
+    font-size: 14px;
+}
+
+.monthlyContainer h3 {
+    margin: 0;
+}
+
+.monthlyContainer img{
+    height: auto;
+    width: 21px;
+}
+
+tr.tr:nth-child(1){
+    border-bottom: 1px solid #667185;
+    ;
+}
+
+@media (max-width: 768px) {
+ 
+    .table, .small, .large {
+
+
+        padding: 10px;
+        text-align: center;
+    }
+  
+    .dailyContainer .profile{
+        width: 20px;
+    }
+    .dailyContainer .place{
+        width: 15px;
+    }
+    
+    .dailyContainer, .monthlyContainer {
+
+        gap: 5px;
+    }
+    
+    .dailyContainer .username, .monthlyContainer {
+        text-align: center;
+        font-size: 10px; /* Adjust font size for readability */
+    }
+}

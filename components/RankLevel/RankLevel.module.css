@@ -1,0 +1,20 @@
+.container{
+    color: wheat;
+}
+
+.trophyContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.left, .right {
+    height: auto;
+    width: 20px;
+}
+
+.trophy {
+    height: auto;
+    width: 260px;
+}

@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    max-width: 500px;
+
+    height: 8px;
+    border-radius: 20px;
+    background-color: #2b2828;
+    margin: 30px auto;
+    overflow: hidden; /* Ensure the loading bar doesn't exceed the container */
+  }
+  
+  .loader {
+    height: 100%;
+    background: linear-gradient(139.96deg, #14F195 0%, #608ED2 38.54%, #9945FF 67.16%);
+
+  }
+  

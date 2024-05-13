@@ -1,0 +1,14 @@
+/* StatsCards.module.css */
+.container {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  /* Centers cards with space around them */
+ /* Adds space between cards */
+}
+
+@media (max-width: 768px) { /* Styles for mobile screens */
+    .container {
+        justify-content: center;
+    }
+}

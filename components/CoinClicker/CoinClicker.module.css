@@ -1,0 +1,78 @@
+.container {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.union {
+    width: 90%; /* Adjust if needed */
+    max-width: 400px; /* Set maximum width */
+    height: auto;
+    animation: spin 10s linear infinite; /* Apply spin animation */
+}
+
+.coin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%; /* Adjust the size of the coin */
+    max-width: 140px; /* Set maximum width */
+    height: auto;
+    transition: transform 0.1s ease; /* Add transition effect */
+}
+
+@keyframes spin {
+    /* Define the spinning animation */
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.plusOne {
+    position: absolute;
+    /* top: calc( var(--rand) + 10% + 50%) ; */
+    /* left: 20%; */
+    transform: translate(-50%, -50%);
+    font-size: 24px; /* Adjust font size as needed */
+    color: rgb(255, 255, 255); /* Adjust color as needed */
+    animation: floatUp 1s ease-out; /* Apply float animation */
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -200%); /* Adjust vertical distance as needed */
+    }
+}
+
+
+.clicked {
+    transform: translate(-50%, -50%) rotate(10deg); /* Adjust rotation angle as needed */
+}
+
+.clicked .coin {
+    transform: translate(-50%, -50%) rotate(10deg); /* Adjust rotation angle as needed */
+}
+
+
+@media screen and (max-width: 760px) {
+    /* Adjust styles for screens up to 480px width (e.g., mobile devices) */
+    .union {
+        width: 100%; /* Adjust if needed */
+    }
+
+    .coin {
+        width: 40%; /* Adjust the size of the coin */
+    }
+}

@@ -1,0 +1,53 @@
+/* StatsInfoCard.module.css */
+.container {
+    background: linear-gradient(
+        139.96deg,
+        rgba(20, 241, 149, 0.14) 0%,
+        rgba(96, 142, 210, 0.14) 38.54%,
+        rgba(153, 69, 255, 0.14) 67.16%
+    );
+    border: 1px solid rgba(153, 69, 255, 0.14);
+    min-width: 210px; /* Minimum width */
+    max-width: 250px; /* Maximum width */
+    text-align: center;
+    border-radius: 8px;
+    padding: 15px 5px;
+    margin: 10px; /* Ensure enough space around each card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional shadow for depth */
+    flex: 1 1 auto; /* Allows flex items to grow and shrink */
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.top h3 {
+    
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.container h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 5px 0; /* Reduces space around the heading */
+}
+
+@media (max-width: 768px) { /* Adjustments for mobile screens */
+    .container {
+        flex: 0 1 48%; /* Adjust width for 2x2 grid, slightly less than half to fit gap */
+        max-width: 200px; /* Make the max width smaller */
+        padding: 20px 24px; /* Smaller padding */
+        min-width: 180px; /* Smaller minimum width to fit mobile screens */
+    }
+    .container h3 {
+        font-size: 12px; /* Smaller font size */
+    }
+    .container h1 {
+        font-size: 24px; /* Smaller font size */
+    }
+}

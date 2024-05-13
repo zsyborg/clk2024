@@ -1,0 +1,72 @@
+.container {
+    background: linear-gradient(
+        145.05deg,
+        rgba(213, 213, 213, 0.28) 4.17%,
+        rgba(255, 255, 255, 0.1) 94.34%
+    );
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    backdrop-filter: blur(10px); /* Adds a blur effect */
+
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px; /* Reduced padding for smaller screens */
+}
+.top{
+    margin: 6px 0 15px 0;
+}
+.box {
+    border-radius: 20px;
+    background: #140d21;
+    display: flex;
+    flex-direction: column;
+    width: 90%; /* Adjusted width for smaller screens */
+    max-width: 240px; /* Limit maximum size on larger screens */
+    padding: 20px; /* Reduced padding for smaller screens */
+    justify-content: center;
+    align-items: center;
+}
+
+.imageContainer img {
+    width: 100%; /* Responsive image */
+    max-width: 120px; /* Limit maximum size */
+    height: auto;
+}
+
+.bottom {
+    width: 100%; /* Full width of container */
+}
+
+.description {
+    margin-top: 20px;
+}
+
+.button {
+    background: linear-gradient(
+        139.96deg,
+        #14f195 0%,
+        #608ed2 38.54%,
+        #9945ff 67.16%
+    );
+    width: 100%; /* Full width of container */
+    padding: 7px 0;
+    border-radius: 12px;
+    margin: 20px 0 5px 0;
+}
+
+/* Media Query for very small devices */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 10px; /* Even less padding for smaller devices */
+    }
+    .box {
+        width: 100%; /* Use full screen width */
+        padding: 10px; /* Smaller padding */
+    }
+}

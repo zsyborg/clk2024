@@ -1,0 +1,51 @@
+.container{
+    background: linear-gradient(145.05deg, rgba(213, 213, 213, 0.28) 4.17%, rgba(255, 255, 255, 0.1) 94.34%);
+    max-width: 400px;
+    margin: auto;
+    padding: 5px;
+    border-radius: 32px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.pfps ,.info {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.pfps img {
+    height: auto;
+    width: 20px;
+    margin-right: -8px; /* Adjust this value to control the overlap */
+
+}
+
+/* Ensure the last image does not overflow the container */
+.pfps img:last-child {
+    margin-right: 0;
+}
+
+/* 
+p{
+    margin: auto;
+    font-weight: 500;
+    color: white;
+
+} */
+
+.count{
+    gap: 4px;
+    border-right: 1px solid #727272;
+
+    display: flex;
+}
+
+.count img{
+    height: auto;
+    width: 30px;
+    margin-right: 10px;
+}

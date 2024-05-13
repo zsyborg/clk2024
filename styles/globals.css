@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-screen w-full text-gray-900 antialiased;
+  }
+}
+
+
+body{
+  background: linear-gradient(180deg, #000000 27.83%, #503185 100%);
+  overflow: hidden;
+}
+
+
+
+.trophyImg {
+  height: auto;
+  width: 62px;
+}
+
+.text {
+  font-family: Satoshi;
+  font-size: 62px;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  line-height: 124.15px;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+
+.pfps ,.info {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.pfps img {
+  height: auto;
+  width: 20px;
+  margin-right: -8px; /* Adjust this value to control the overlap */
+
+}
+
+/* Ensure the last image does not overflow the container */
+.pfps img:last-child {
+  margin-right: 0;
+}
+
+/* 
+p{
+  margin: auto;
+  font-weight: 500;
+  color: white;
+
+} */
+
+.count{
+  gap: 4px;
+  border-right: 1px solid #727272;
+
+  display: flex;
+}
+
+.count img{
+  height: auto;
+  width: 30px;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+.union {
+  width: 90%; /* Adjust if needed */
+  max-width: 400px; /* Set maximum width */
+  height: auto;
+  animation: spin 10s linear infinite; /* Apply spin animation */
+}
+
+.coin {
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  width: 40%; /* Adjust the size of the coin */
+  max-width: 140px; /* Set maximum width */
+  height: auto;
+  transition: transform 0.1s ease; /* Add transition effect */
+}
+
+@keyframes spin {
+  /* Define the spinning animation */
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.plusOne {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 24px; /* Adjust font size as needed */
+  color: rgb(255, 255, 255); /* Adjust color as needed */
+  animation: floatUp 1s ease-out; /* Apply float animation */
+}
+
+@keyframes floatUp {
+  0% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+  }
+  100% {
+      opacity: 0;
+      transform: translate(-50%, -200%); /* Adjust vertical distance as needed */
+  }
+}
+
+
+.clicked {
+  transform: translate(-50%, -50%) rotate(10deg); /* Adjust rotation angle as needed */
+}
+
+.clicked .coin {
+  transform: translate(-50%, -50%) rotate(10deg); /* Adjust rotation angle as needed */
+}
+
+
+@media screen and (max-width: 760px) {
+  /* Adjust styles for screens up to 480px width (e.g., mobile devices) */
+  .union {
+      width: 100%; /* Adjust if needed */
+  }
+
+  .coin {
+      width: 40%; /* Adjust the size of the coin */
+  }
+}
+
+
+
+
+.container{
+  width: 100%;
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0;
+  justify-content: center;
+  align-items: center; 
+}
