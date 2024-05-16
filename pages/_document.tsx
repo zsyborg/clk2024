@@ -1,5 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from "next/document"
-
+import {Header} from '../components/header'
 // Need to create a custom _document because i18n support is not compatible with `next export`.
 class MyDocument extends Document {
   // eslint-disable-next-line class-methods-use-this
@@ -26,6 +26,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
         </Head>
         <body>
+          {/* <Header/> */}
           <Main />
           <NextScript />
         </body>

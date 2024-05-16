@@ -290,7 +290,7 @@ setTimeout(() => {
         {/* <MessageBar message={"Connect Wallet To Start Playing"} type={"INVITE"} /> */}
         {/* <LoadingBar percentage={50} /> */}
         {/* <CoinClicker /> */}
-      <ConnectWalletButton/>
+      {/* <ConnectWalletButton/> */}
 
 
         <div className="container">

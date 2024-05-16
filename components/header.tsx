@@ -31,16 +31,16 @@ export default function Header() {
   const { asPath } = useRouter()
 
   return (
-    <header className="hidden left-0 top-0 z-20 w-full mybg">
+    <header className="left-0 top-0 z-20 w-full mybg">
       <div className="container mx-auto flex justify-center w-full items-center p-4">
         <a href="/" className="flex items-center">
           <img src="/assets/logo.png" className="mr-3 h-8" alt={siteConfig.name} />
-          <Typography as="span" level="h6" className="hidden whitespace-nowrap font-semibold md:inline-block">
+          <Typography as="span" level="h6" className="whitespace-nowrap font-semibold md:inline-block">
             {siteConfig.name}
           </Typography>
         </a>
 
-        <ul className="ml-10 hidden items-center gap-6 md:flex">
+        <ul className="ml-10 items-center gap-6 md:flex">
           {MenuItems.map((item) => (
             <li key={item.text}>
               <Link
