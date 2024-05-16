@@ -14,6 +14,14 @@ body{
   overflow: hidden;
 }
 
+.screen{
+  width:100vw;
+    height:100vh;
+}
+
+canvas{
+  background-color: #000000;
+}
 
 
 .trophyImg {
@@ -86,8 +94,8 @@ p{
 
 .coin {
   position: absolute;
-  top: 50%;
-  left: 48%;
+  top: 35%;
+  left: 41%;
   transform: translate(-50%, -50%);
   width: 40%; /* Adjust the size of the coin */
   max-width: 140px; /* Set maximum width */

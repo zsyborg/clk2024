@@ -6,7 +6,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import axios from 'axios'
 
 const CoinClicker = () => {
-    const [isClicked, setIsClicked] = useState(false);
+    const [isClicked,   setIsClicked] = useState(false);
     const [showPlusOne, setShowPlusOne] = useState(false);
    
     const [receiver, setReceiver] = useState("")

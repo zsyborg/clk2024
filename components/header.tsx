@@ -6,6 +6,7 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/utils/cn"
 import { IconButton } from "./ui/icon-button"
 import { Typography } from "./ui/typography"
+import ConnectWalletButton from "@/components/connect-wallet-button"
 
 const MenuItems = [
   {
@@ -30,8 +31,8 @@ export default function Header() {
   const { asPath } = useRouter()
 
   return (
-    <header className="fixed left-0 top-0 z-20 w-full mybg">
-      <div className="container mx-auto flex items-center p-4 md:px-6">
+    <header className="hidden left-0 top-0 z-20 w-full mybg">
+      <div className="container mx-auto flex justify-center w-full items-center p-4">
         <a href="/" className="flex items-center">
           <img src="/assets/logo.png" className="mr-3 h-8" alt={siteConfig.name} />
           <Typography as="span" level="h6" className="hidden whitespace-nowrap font-semibold md:inline-block">
@@ -54,6 +55,9 @@ export default function Header() {
               </Link>
             </li>
           ))}
+          <li>
+            <ConnectWalletButton/>
+          </li>
         </ul>
 
         <div className="flex flex-1 items-center justify-end gap-2">
