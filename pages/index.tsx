@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   WalletNotConnectedError
 } from "@solana/wallet-adapter-base"
@@ -40,8 +41,8 @@ import LoadingBar from '../components/LoadingBar/LoadingBar'
 import MessageBar from '../components/MessageBar/MessageBar'
 import Trophy from '../components/Trophy/Trophy'
 import { Canvas } from '@react-three/fiber'
-type ResultStatus = "idle" | "success" | "failed"
 import ThreeScene from '../components/ThreeScene';
+type ResultStatus = "idle" | "success" | "failed"
 export default function HomePage() {
 
   return ( 

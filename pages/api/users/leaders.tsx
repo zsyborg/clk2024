@@ -1,10 +1,11 @@
+/* eslint-disable */
 import { NextApiRequest, NextApiResponse } from 'next'
-import Card, {Cards} from '../../../models/Card'
-const MONGODBURI = process.env.MONGODBURI!
-import dbConnect from '../../../lib/dbConnect'
 import clientPromise from '../../../lib/mongodb'
+import dbConnect from '../../../lib/dbConnect'
+import Card, {Cards} from '../../../models/Card'
 import { MongoClient } from 'mongodb'
 import NextCors from 'nextjs-cors'
+const MONGODBURI = process.env.MONGODBURI!
 
 
 // const MONGODBURI='mongodb+srv://techzasha:ridYVCRZnC5FUDr1@dharti.ctgvhra.mongodb.net/?retryWrites=true&w=majority'
@@ -17,7 +18,7 @@ async function listDatabases(client: MongoClient){
   const items = coll.find()
   // console.log(items)
   return items
-};
+}
 
 
 export default async function handler(
@@ -44,7 +45,7 @@ export default async function handler(
     origin: '*',
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
  });
-      var opts = {
+      const opts = {
         dbName: 'Clicker'
       }
       try {

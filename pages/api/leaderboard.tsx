@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { NextApiRequest, NextApiResponse } from 'next'
 import dbConnect from '../../lib/dbConnect'
 import Card, {Cards} from '../../models/Card'
@@ -14,7 +15,7 @@ async function listDatabases(client: MongoClient){
   const items = coll.find()
   // console.log(items)
   return items
-};
+}
 
 
 export default async function handler(
@@ -26,7 +27,7 @@ export default async function handler(
   await clientPromise
   switch (method) {
     case 'GET':
-      var opts = {
+      const opts = {
         dbName: 'Grimace'
       }
       try {

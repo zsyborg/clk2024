@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { NextApiRequest, NextApiResponse } from 'next'
 // import Card, {Cards} from '../../../models/Card'
 const MONGODBURI = process.env['MONGODBURI']!

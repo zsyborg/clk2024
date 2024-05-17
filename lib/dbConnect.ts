@@ -1,5 +1,5 @@
-const globalAny:any = global;
 import mongoose from 'mongoose'
+const globalAny:any = global;
 
 declare global {
   const mongoose: any

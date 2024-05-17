@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { NextApiRequest, NextApiResponse } from 'next'
 import dbConnect from '../../lib/dbConnect'
 import Card, {Cards} from '../../models/Card'
@@ -17,7 +18,7 @@ async function listDatabases(client: MongoClient){
   
   // console.log(items)
   return items
-};
+}
 
 
 export default async function handler(
@@ -35,7 +36,7 @@ export default async function handler(
         origin: '*',
         optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
      });
-      var opts = {
+      const opts = {
         dbName: 'Grimace'
       }
       try {

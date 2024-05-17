@@ -6,7 +6,7 @@ import { clusterApiUrl } from "@solana/web3.js"
 import type { AppProps } from "next/app"
 import { DefaultSeo } from "next-seo"
 import type { FC } from "react"
-import React, { useMemo, useEffect, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import RootLayout from "@/components/layout"
 import { siteConfig } from "@/config/site"
 // import { supabase } from '../utils/supabase'
@@ -39,7 +39,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
     async function getTodos() {
       
-      let { data: wonka, error } = await supabase
+      const { data: wonka, error } = await supabase
       .from('wonka')
       .select('*')
 

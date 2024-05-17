@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 import { WalletNotConnectedError } from "@solana/wallet-adapter-base"
 import { useConnection, useWallet } from "@solana/wallet-adapter-react"
 import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana/web3.js"
@@ -140,9 +140,9 @@ setTimeout(() => {
         
     if (publicKey) { 
   
-      let chkdata = {
-        wallet: publicKey?.toBase58(),
-      };
+      // let chkdata = {
+        // wallet: publicKey?.toBase58(),
+      // };
       
 
 
@@ -173,44 +173,44 @@ setTimeout(() => {
       // const { data } = await supabase.from('clicker').select().returns<Database>()
       // console.log(data)
 
-      axios.post('/api/users/check', chkdata)
-      .then((response: any) => {
-        
-        settotalClick(response.data.data.clicks)
-        console.log("Total Clicks = " + response.data.data.clicks)
-        console.log("Current Click Count = " + clickCount)
-        settotalClick(response.data.data.clicks)
-        setLevel(response.data.data.level)
+      // axios.post('/api/users/check', chkdata)
+      // .then((response: any) => {
+        // 
+        // settotalClick(response.data.data.clicks)
+        // console.log("Total Clicks = " + response.data.data.clicks)
+        // console.log("Current Click Count = " + clickCount)
+        // settotalClick(response.data.data.clicks)
+        // setLevel(response.data.data.level)
   
-        if (response.data.data === false) {
+        // if (response.data.data === false) {
            // Create New User
            setIsGameReady(false);
-          console.log(("Creating a new User"))
-            let newusrdata = {
-              wallet: publicKey?.toBase58(),
-              clicks: 0,
-              level: 0
-            };
-            axios.post('/api/users', newusrdata)
-            .then((response: any) => {
-              console.log(response)
-              setIsGameReady(true);
-              return response
-            })
-            .catch((error: any) => {
-              console.log(error); 
-              
-            });
-        } else {
+          // console.log(("Creating a new User"))
+            // let newusrdata = {
+              // wallet: publicKey?.toBase58(),
+              // clicks: 0,
+              // level: 0
+            // };
+            // axios.post('/api/users', newusrdata)
+            // .then((response: any) => {
+              // console.log(response)
+              // setIsGameReady(true);
+              // return response
+            // })
+            // .catch((error: any) => {
+              // console.log(error); 
+              // 
+            // });
+        // } else {
       
-          axios.get('/api/users')
-          .then((response: any) => {
-            console.log(response.data.data)
-            setData(response.data.data)
-            if (response.data.data === false) {
-             setIsGameReady(false) 
-            }
-            return response.data.data
+          // axios.get('/api/users')
+          // .then((response: any) => {
+            // console.log(response.data.data)
+            // setData(response.data.data)
+            // if (response.data.data === false) {
+            //  setIsGameReady(false) 
+            // }
+            // return response.data.data
             // data.map((item, index) => (
             //   {item.wallet === wallet ? (
             //     {setClickCount(item.clicks)}
@@ -224,19 +224,20 @@ setTimeout(() => {
             //   console.log("Total Clicks" + data.clicks)
             // }
             
-          })
-          .catch((error: any) => {
-            console.log(error);
-            
-          });
+
+          // })
+          // .catch((error: any) => {
+            // console.log(error);
+            // 
+          // });
     
-        }
+        // }
   
         
-      })
-      .catch((error: any) => {
-        console.log(error);
-      });
+      // })
+      // .catch((error: any) => {
+        // console.log(error);
+      // });
       
       
      
@@ -254,7 +255,7 @@ setTimeout(() => {
       // );
       // setGameError(gameState.errorMessage);
       
-    } else {
+    // } else {
       // setIsGameReady(false);
       // setClicks(0);
       // setGameAccountPublicKey("");

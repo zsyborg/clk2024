@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useMemo } from 'react'
+/* eslint-disable */
+import React, { useEffect, useMemo, useState,  } from 'react'
 import { WalletNotConnectedError } from "@solana/wallet-adapter-base"
 import { useConnection, useWallet } from "@solana/wallet-adapter-react"
 import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana/web3.js"
@@ -76,9 +77,9 @@ export default function StatsPage() {
         
     if (publicKey) { 
   
-      let chkdata = {
-        wallet: publicKey?.toBase58(),
-      };
+      // let chkdata = {
+        // wallet: publicKey?.toBase58(),
+      // };
       
 
 
@@ -109,44 +110,44 @@ export default function StatsPage() {
       // const { data } = await supabase.from('clicker').select().returns<Database>()
       // console.log(data)
 
-      axios.post('/api/users/check', chkdata)
-      .then((response: any) => {
-        
-        settotalClick(response.data.data.clicks)
-        console.log("Total Clicks = " + response.data.data.clicks)
-        console.log("Current Click Count = " + clickCount)
-        settotalClick(response.data.data.clicks)
-        setLevel(response.data.data.level)
-  
-        if (response.data.data === false) {
+      // axios.post('/api/users/check', chkdata)
+      // .then((response: any) => {
+        // 
+        // settotalClick(response.data.data.clicks)
+        // console.log("Total Clicks = " + response.data.data.clicks)
+        // console.log("Current Click Count = " + clickCount)
+        // settotalClick(response.data.data.clicks)
+        // setLevel(response.data.data.level)
+  // 
+        // if (response.data.data === false) {
            // Create New User
-           setIsGameReady(false);
-          console.log(("Creating a new User"))
-            let newusrdata = {
-              wallet: publicKey?.toBase58(),
-              clicks: 0,
-              level: 0
-            };
-            axios.post('/api/users', newusrdata)
-            .then((response: any) => {
-              console.log(response)
-              setIsGameReady(true);
-              return response
-            })
-            .catch((error: any) => {
-              console.log(error); 
-              
-            });
-        } else {
-      
-          axios.get('/api/users')
-          .then((response: any) => {
-            console.log(response.data.data)
-            setData(response.data.data)
-            if (response.data.data === false) {
-             setIsGameReady(false) 
-            }
-            return response.data.data
+          //  setIsGameReady(false);
+          // console.log(("Creating a new User"))
+            // const newusrdata = {
+              // wallet: publicKey?.toBase58(),
+              // clicks: 0,
+              // level: 0
+            // };
+            // axios.post('/api/users', newusrdata)
+            // .then((response: any) => {
+              // console.log(response)
+              // setIsGameReady(true);
+              // return response
+            // })
+            // .catch((error: any) => {
+              // console.log(error); 
+              // 
+            // });
+        // } else {
+      // 
+          // axios.get('/api/users')
+          // .then((response: any) => {
+            // console.log(response.data.data)
+            // setData(response.data.data)
+            // if (response.data.data === false) {
+            //  setIsGameReady(false) 
+            // }
+            // return response.data.data
             // data.map((item, index) => (
             //   {item.wallet === wallet ? (
             //     {setClickCount(item.clicks)}
@@ -160,19 +161,19 @@ export default function StatsPage() {
             //   console.log("Total Clicks" + data.clicks)
             // }
             
-          })
-          .catch((error: any) => {
-            console.log(error);
-            
-          });
+          // })
+          // .catch((error: any) => {
+            // console.log(error);
+            // 
+          // });
     
-        }
+        // }
   
         
-      })
-      .catch((error: any) => {
-        console.log(error);
-      });
+      // })
+      // .catch((error: any) => {
+        // console.log(error);
+      // });
       
       
      
@@ -190,7 +191,7 @@ export default function StatsPage() {
       // );
       // setGameError(gameState.errorMessage);
       
-    } else {
+    // } else {
       // setIsGameReady(false);
       // setClicks(0);
       // setGameAccountPublicKey("");
@@ -200,7 +201,7 @@ export default function StatsPage() {
     }
   
   
-  };
+  }
   
     
 

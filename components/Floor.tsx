@@ -1,6 +1,6 @@
 import React from "react";
 
-function Floor(props) {
+function Floor(props:any) {
   return (
     <mesh {...props} recieveShadow>
       <boxBufferGeometry args={[20,1,10]} />
