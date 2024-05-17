@@ -45,8 +45,10 @@ export default function HomePage() {
 
 
   function solclick() {
+    setClickCount(prevCount => prevCount + 1);
     setEffect(true)
     setIsGameReady(true);
+    console.log("Clicked")
     setTimeout(() => {
       setShowPlusOne(false);
     }, 3000);
