@@ -1,10 +1,10 @@
 import type { SiteConfig } from "@/types"
 
 export const siteConfig: SiteConfig = {
-  name: "Solana starter",
-  description: "A Solana-powered Next.js boilerplate app for building efficient and scalable web applications.",
-  url: "https://solana-starter.com",
-  ogImage: "https://solana-starter.com/og.jpg",
+  name: "Sol Clicker",
+  description: "A Solana-powered Clicker Game",
+  url: "https://solclicker.xyz",
+  ogImage: "https://solclicker.xyz/logo.jpg",
   links: {
     twitter: "",
     github: "",

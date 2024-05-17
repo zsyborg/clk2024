@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/utils/cn"
 import { IconButton } from "./ui/icon-button"
 import { Typography } from "./ui/typography"
-import ConnectWalletButton from "@/components/connect-wallet-button"
+// import ConnectWalletButton from "@/components/connect-wallet-button"
 
 const MenuItems = [
   {
@@ -56,7 +56,7 @@ export default function Header() {
             </li>
           ))}
           <li>
-            <ConnectWalletButton/>
+            {/* <ConnectWalletButton/> */}
           </li>
         </ul>
 

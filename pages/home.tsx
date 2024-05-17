@@ -5,7 +5,7 @@ import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana
 import React, { useEffect, useState } from 'react'
 import trophy from "./trophy.png"
 
-import ConnectWalletButton from "@/components/connect-wallet-button"
+// import ConnectWalletButton from "@/components/connect-wallet-button"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Typography } from "@/components/ui/typography"
@@ -28,6 +28,7 @@ export default function HomePage() {
   const [signature, setSignature] = useState("")
   const [effect, setEffect] = useState(false);
   const [showPlusOne, setShowPlusOne] = useState(false);
+  const [isClicked,   setIsClicked] = useState(false);
 
   const { connected, publicKey, sendTransaction } = useWallet()
   const { connection } = useConnection()
@@ -43,91 +44,63 @@ export default function HomePage() {
 
 
 
-  const submitTransaction = async () => {
-    if (!publicKey) throw new WalletNotConnectedError()
-
-    try {
-      setLoading(true)
-      setResult("idle")
-      setSignature("")
-      const ix = SystemProgram.transfer({
-        fromPubkey: publicKey,
-        toPubkey: new PublicKey(receiver),
-        lamports: parseFloat(amount) * LAMPORTS_PER_SOL,
-      })
-      const tx = new Transaction().add(ix)
-      const signature = await sendTransaction(tx, connection)
-      await connection.confirmTransaction(signature, "processed")
-      setSignature(signature)
-      setResult("success")
-    } catch (error) {
-      console.error(error)
-      setResult("failed")
-    } finally {
-      setLoading(false)
-    }
+  function solclick() {
+    setEffect(true)
+    setIsGameReady(true);
+    setTimeout(() => {
+      setShowPlusOne(false);
+    }, 3000);
   }
 
 
+  const handleTouchStart = () => {
+    setIsClicked(true);
+    setShowPlusOne(true);
+
+    // Hide "+1" after 1 second
+    setTimeout(() => {
+        setShowPlusOne(false);
+    }, 1000);
+};
+
+const handleTouchEnd = () => {
+  setIsClicked(false);
+};
 
   
   async function handleClick() {
+    setEffect(true)
+    setIsGameReady(true);
+
 
     if (publicKey) {
-      console.log("My wallet " + publicKey.toBase58())
-      
+    setIsGameReady(true);
+
+      // console.log("My wallet " + publicKey.toBase58())
       setEffect(true)
+      setShowPlusOne(true);
+      // Hide "+1" after 1 second
+      setTimeout(() => {
+      setShowPlusOne(false);
+      // setClickCount(0)
+      // console.log("PATCH Clicks + " + totalClick)
+      }, 3000);
 
-    // console.log("PATCH Clicks + " + totalClick)
+ 
+  } else{
+    setIsGameReady(true);
 
+    // console.log("My wallet " + publicKey.toBase58())
+    setEffect(true)
     setShowPlusOne(true);
-        // Hide "+1" after 1 second
-setTimeout(() => {
-  setShowPlusOne(false);
-  // setClickCount(0)
-}, 3000);
-
-
-
-    setClickCount(clickCount + 1)
-    settotalClick(totalClick + 1)
+    // Hide "+1" after 1 second
+    setTimeout(() => {
+    setShowPlusOne(false);
+    // setClickCount(0)
+    }, 3000);
     
-    localStorage.setItem('clicks', clickCount.toString())
-    localStorage.setItem('level', level.toString())
-    const klick = localStorage.getItem('clicks')
-    const lvl = localStorage.getItem('level')
-    // Check if the totalClicks is a multiple of 10
-    // if (clickCount % 10 === 0) {
-      // Level up and double the required clicks for the next level
-      // setLevel(level + 1);
-      // localStorage.setItem('level', level.toString())
 
-
-
-      //  let clkdata = {
-        // wallet: publicKey,
-        // clicks: klick,
-        // level: lvl
-      // };
-
-
-
-      // console.log("Patched Data" + clkdata)
-      // axios.patch('/api/users', clkdata)
-      // .then((response) => {
-      //   console.log(response)
-      //   // settotalClick(response.data.data.clicks)
-      // })
-      // .catch((error) => {
-      //   console.log(error);
-      // });
-
-    
-// console.log("Total Clicks " + clickCount)
-// console.log("Reached Level " + level)
-
-    // } 
-  } //if considtion
+  }
 
 }
 
@@ -184,7 +157,7 @@ setTimeout(() => {
   
         // if (response.data.data === false) {
            // Create New User
-           setIsGameReady(false);
+           setIsGameReady(true);
           // console.log(("Creating a new User"))
             // let newusrdata = {
               // wallet: publicKey?.toBase58(),
@@ -269,6 +242,10 @@ setTimeout(() => {
   
     
 //  initGame()
+const handleRelease = () => {
+  setIsClicked(false);
+};
+
 
 
 
@@ -300,10 +277,10 @@ setTimeout(() => {
                 src="/ogcoin.png"
                 className="coin"
                 alt=""
-                onMouseDown={handleClick}
-                // onMouseUp={handleRelease}
-                // onTouchStart={handleTouchStart}
-                // onTouchEnd={handleTouchEnd}
+                onMouseDown={solclick}
+                onMouseUp={handleRelease}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
                 style={{transform:"rotateZ(90deg)"}}
             />
             

@@ -66,7 +66,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
       />
 
       <ConnectionProvider endpoint={endpoint}>
-        <WalletProvider wallets={wallets} autoConnect>
+        <WalletProvider wallets={wallets}>
           <WalletModalProvider>
             <RootLayout>
               <Component {...pageProps} />
