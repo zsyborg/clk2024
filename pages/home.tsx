@@ -253,7 +253,7 @@ const handleRelease = () => {
 
 
   return (
-    <div className="mx-auto flex w-full max-w-md flex-col gap-6 justify-center">
+    <div className="mx-auto flex w-full max-w-md flex-col gap-6 justify-center overflow-hidden">
       {/* <Trophy /> */}
       <div className="container">
       <div className="row flex-row flex justify-center items-center" style={{justifyContent:"center"}}>
