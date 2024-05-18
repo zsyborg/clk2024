@@ -12,9 +12,9 @@ export const buttonVariants = tv({
   ],
   variants: {
     variant: {
-      solid: ["bg-primary-400 text-white", "hover:bg-primary-600", "focus:ring-primary-100", "disabled:bg-primary-200"],
+      solid: ["bg-primary-400 text-blue-200", "hover:bg-primary-600", "focus:ring-primary-100", "disabled:bg-primary-200"],
       outline: [
-        "text-primary-400 border border-primary-400",
+        "text-white border border-blue-400",
         "focus:ring-primary-100",
         "disabled:text-primary-300 disabled:border-primary-200",
       ],
@@ -34,7 +34,7 @@ export const buttonVariants = tv({
     },
   },
   defaultVariants: {
-    variant: "solid",
+    variant: "outline",
     size: "md",
     fullWidth: false,
   },

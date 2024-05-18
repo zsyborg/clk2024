@@ -1,10 +1,10 @@
 // components/ThreeScene.js
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { TextureLoader } from 'three';
-import { SSAORenderPass } from 'three/examples/jsm/postprocessing/SSAOPass';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
+import { Scene, TextureLoader } from 'three';
+import { useLoader } from '@react-three/fiber'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'  
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 // import { Box } from '@react-three/drei';
 
 
@@ -33,6 +33,11 @@ const Coin = () => {
     
   }
 
+  function Scene() {
+    const gltf = useLoader(GLTFLoader, '/podium.glb')
+    return <primitive object={gltf.scene} />
+  }
+  
 
   return (
     <mesh ref={mesh} onClick={meshClicker}>
@@ -45,7 +50,7 @@ const Coin = () => {
 
 const ThreeScene = () => {
   return (
-    <Canvas style={{width:"100vw", height: "100vh"}}>
+    <Canvas onCreated={state => state.gl.setClearColor("rgba(0,0,0,0)")} style={{width:"100vw", height: "100vh"}}>
       <ambientLight intensity={1} />
       <pointLight position={[10, 10, 10]} />
       <Coin position={[50, 0, 0]} />

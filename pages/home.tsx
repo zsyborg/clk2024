@@ -3,8 +3,10 @@ import { WalletNotConnectedError } from "@solana/wallet-adapter-base"
 import { useConnection, useWallet } from "@solana/wallet-adapter-react"
 import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana/web3.js"
 import React, { useEffect, useState } from 'react'
-import trophy from "./trophy.png"
+import trophy from "./trophy.png";
 
+
+import ThreeScene from '../components/ThreeScene';
 // import ConnectWalletButton from "@/components/connect-wallet-button"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -41,6 +43,9 @@ export default function HomePage() {
   const [sdata, setData] = useState([]);
   const [isGameReady, setIsGameReady] = useState(false);
   const [clicks, setClicks] = useState(0);
+
+
+
 
 
 
@@ -244,9 +249,9 @@ const handleTouchEnd = () => {
   
     
 //  initGame()
-const handleRelease = () => {
-  setIsClicked(false);
-};
+  const handleRelease = () => {
+    setIsClicked(false);
+  };
 
 
 
@@ -255,6 +260,11 @@ const handleRelease = () => {
   return (
     <div className="mx-auto flex w-full max-w-md flex-col gap-6 justify-center overflow-hidden">
       {/* <Trophy /> */}
+    <div style={{ width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+
+        {/* <ThreeScene/> */}
+    
+    </div>
       <div className="container">
       <div className="row flex-row flex justify-center items-center" style={{justifyContent:"center"}}>
         <div className="col-6 flex flex-col justify-center items-center text-center">
@@ -267,6 +277,7 @@ const handleRelease = () => {
         </div>
       </div>
     </div>
+
         {/* <MessageBar message={"Connect Wallet To Start Playing"} type={"INVITE"} /> */}
         {/* <LoadingBar percentage={50} /> */}
         {/* <CoinClicker /> */}
@@ -274,7 +285,7 @@ const handleRelease = () => {
 
 
         <div className="container">
-            <img src="/union.png" className="union" alt="" />
+            <img src="/union.png" className="union" alt="Spinner" />
             <img
                 src="/ogcoin.png"
                 className="coin"
