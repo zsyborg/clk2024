@@ -43,7 +43,7 @@
     "@solana/wallet-adapter-react": "^0.15.32",
     "@solana/wallet-adapter-react-ui": "^0.9.31",
     "@solana/wallet-adapter-wallets": "^0.19.16",
-    "@solana/web3.js": "^1.77.3",
+    "@solana/web3.js": "^1.77.4",
     "@supabase/supabase-js": "^2.43.2",
     "ani-cursor": "^0.0.5",
     "animejs": "^3.2.2",
