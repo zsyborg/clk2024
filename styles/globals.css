@@ -156,8 +156,17 @@ img.coin{
   }
 }
 
-.men{
-  
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  /*Removesspacebetweenborders*//*border-radius: 20px;
+  */overflow: hidden;
+  /*Ensurestheborder-radiusclipsthecontents*/
+  /* transform: skew(20deg); */
+  /* -webkit-transform: skew(20deg); */
+  /* -moz-transform: skew(20deg); */
+  /* -ms-transform: skew(20deg); */
+  /* -o-transform: skew(20deg); */
 }
 
 
@@ -169,7 +178,7 @@ img.coin{
   transform: translate(-50%, -50%) rotate(10deg); /* Adjust rotation angle as needed */
 }
 
-`
+``1
 @media screen and (max-width: 760px) {
   /* Adjust styles for screens up to 480px width (e.g., mobile devices) */
   .union {
@@ -181,20 +190,20 @@ img.coin{
   }
 }
 
+.container-full {
+  max-width: 100vw;
+  min-width: 100vw;
+}
 
-
-
-.container{
+.container {
+  position: relative;
+  margin: auto;
   width: 100%;
   display: flex;
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  /* padding: 20px 0; */
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
+
 
 
 

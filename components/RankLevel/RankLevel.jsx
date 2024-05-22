@@ -19,9 +19,9 @@ const RankLevel = () => {
         <LoadingBar percentage={10} />
         <MessageBar message={"10/3k"} /> */}
         {/* <h2 className='text-center'>Your Rank Level</h2> */}
-        <h2 className='text-center text-2xl'>Leaderboard</h2>
+        <h2 className='text-center text-2xl'>LEGACY DEGENS</h2>
         <Leaderboard />
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   )
 }

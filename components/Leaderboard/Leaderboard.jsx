@@ -1,9 +1,16 @@
+"use client"
 // Leaderboard.js
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from "./Leaderboard.module.css";
 import profile from "./profile.png";
 import first from "./1st.png";
 import smallcoin from "./smallcoin.png";
+import { createClient } from '@supabase/supabase-js'
+const supabaseUrl = 'https://pqpayyxkvsfoddpbdwyq.supabase.co'
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxcGF5eXhrdnNmb2RkcGJkd3lxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQzNjcxMDUsImV4cCI6MjAyOTk0MzEwNX0.yKp-tNgNR0UirxrqHT0TmPQBoRUaVhzf1rTef86ukRY"
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+let ldata = [] 
 
 
 const Leaderboard = () => {
@@ -20,6 +27,24 @@ const Leaderboard = () => {
         },
         // More entries as needed...
     ];
+
+
+    useEffect(() => {
+        async function getTodos() {
+          
+          const { data: wonka, error } = await supabase
+          .from('wonka')
+          .select('*')
+    
+          ldata = wonka
+          console.log(ldata)
+        }
+    
+        getTodos()
+      }, [])
+    
+    
+
 
     return (
         <div className={styles.container}>

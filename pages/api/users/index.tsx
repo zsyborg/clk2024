@@ -145,18 +145,18 @@ export default async function handler(
        
        const currusr = JSON.stringify(req.body)
        const usry = JSON.parse(currusr)
-      //  const wlty = usry.wallet
+       const wlty = usry.wallet
       //  
-      //  const ucl = JSON.stringify(req.body)
-      //  const cl = JSON.parse(ucl)
-      //  const userclicks = cl.clicks
+       const ucl = JSON.stringify(req.body)
+       const cl = JSON.parse(ucl)
+       const userclicks = cl.clicks
       //  const lvl = cl.level
        
        
       //  console.log("PATCH " + wlty)
-          // const patchUserClick = await usrCollection.updateOne({ wallet: wlty }, { $set: { clicks: userclicks, level: lvl } })
-          // res.status(200).json({ success: true, data: patchUserClick })
-          // clty.close()
+          const patchUserClick = await usrCollection.updateOne({ wallet: wlty }, { $set: { clicks: userclicks } })
+          res.status(200).json({ success: true, data: patchUserClick })
+          clty.close()
 
 
       // Default if all others fail

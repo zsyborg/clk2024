@@ -4,7 +4,6 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { MenuIcon } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/router"
-// import ConnectWalletButton from "@/components/connect-wallet-button"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/utils/cn"
 import { IconButton } from "./ui/icon-button"
@@ -14,10 +13,10 @@ import ConnectWalletButton from "@/components/connect-wallet-button"
 const navigation = [
 
 
-  { name: 'Home', href: '/home', current: true },
-  { name: 'FAQS', href: '#', current: false },
-  { name: 'Stats', href: '#', current: false },
-  { name: 'Invite', href: '#', current: false },
+  { name: 'Home', href: '/', current: true },
+  { name: 'FAQS', href: '/faqs', current: false },
+  { name: 'Stats', href: '/stats', current: false },
+  { name: 'Invite', href: '/invite', current: false },
 ]
 
 
@@ -91,6 +90,11 @@ export default function Header() {
                         {item.name}
                       </a>
                     ))}
+                    <a
+                        href="/profile"
+                        className='bg-amber-400 text-black border border-r-0 px-3 py-2 text-sm font-medium'>
+                        Profile
+                      </a>
                   </div>
                 </div>
               </div>
@@ -121,10 +125,11 @@ export default function Header() {
         </>
       )}
     </Disclosure>
+        {/* 
       <div className="container mx-auto flex justify-center w-full items-center p-4">
        
 
-        {/* <ul className="ml-10 items-center gap-6 md:flex">
+        <ul className="ml-10 items-center gap-6 md:flex">
           {MenuItems.map((item) => (
             <li key={item.text}>
               <Link
@@ -148,8 +153,9 @@ export default function Header() {
           <IconButton className="md:hidden">
             <MenuIcon />
           </IconButton>
-        </div> */}
+        </div> 
       </div>
+        */}
     </header>
   )
 }

@@ -26,7 +26,7 @@ async function dbConnect() {
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
-      dbName: 'Grimace'
+      dbName: 'Clicker'
     }
     cached.promise = mongoose.connect(MONGODBURI, opts).then((mongoose) => {
       return mongoose

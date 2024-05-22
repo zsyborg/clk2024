@@ -1,4 +1,5 @@
 /* eslint-disable */
+"use client"
 import React, { useEffect, useMemo, useState,  } from 'react'
 import { WalletNotConnectedError } from "@solana/wallet-adapter-base"
 import { useConnection, useWallet } from "@solana/wallet-adapter-react"
@@ -16,6 +17,12 @@ import MessageBar from '../components/MessageBar/MessageBar'
 import LoadingBar from '../components/LoadingBar/LoadingBar'
 import RankLevel from '../components/RankLevel/RankLevel'
 import StatsCards from '../components/StatsCards/StatsCards'
+import { createClient } from '@supabase/supabase-js'
+const supabaseUrl = 'https://lrquyravgthhihlevuqk.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxycXV5cmF2Z3RoaGlobGV2dXFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU0NDU3NTQsImV4cCI6MjAzMTAyMTc1NH0.zZTDxZCA5VJ82CTexj8oSW2WBiEZj2pPWFj3s-k15j8'
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+
 
 type ResultStatus = "idle" | "success" | "failed"
 
@@ -68,6 +75,20 @@ export default function StatsPage() {
 
 
 
+
+  
+  useEffect(() => {
+    // async function getTodos() {
+      
+    //   const { data: wonka, error } = await supabase
+    //   .from('clickdb')
+    //   .select('*')
+
+    //   console.log(wonka)
+    // }
+
+    // getTodos()
+  }, [])
 
 
 
@@ -204,23 +225,19 @@ export default function StatsPage() {
   }
   
     
-
-
-
-
 useEffect(() => {
   initGame()
 },[publicKey,clickCount,level])
 
 
-
   return (
-    <div className="mx-auto my-20 flex w-full max-w-md flex-col gap-6 p-6 justify-center">
+    <div className="flex flex-col col-12 justify-center">
       <Trophy />
         {/* <MessageBar message={"Connect Wallet To Start Playing"} type={"INVITE"} /> */}
         {/* <LoadingBar percentage={50} /> */}
-        <StatsCards />
+        {/* <StatsCards /> */}
         <RankLevel />
+        
     </div>
   )
 }

@@ -11,8 +11,10 @@ import RootLayout from "@/components/layout"
 import { siteConfig } from "@/config/site"
 // import { supabase } from '../utils/supabase'
 import { createClient } from '@supabase/supabase-js'
-const supabaseUrl = 'https://pqpayyxkvsfoddpbdwyq.supabase.co'
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxcGF5eXhrdnNmb2RkcGJkd3lxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQzNjcxMDUsImV4cCI6MjAyOTk0MzEwNX0.yKp-tNgNR0UirxrqHT0TmPQBoRUaVhzf1rTef86ukRY"
+// const supabaseUrl = 'https://pqpayyxkvsfoddpbdwyq.supabase.co'
+// const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxcGF5eXhrdnNmb2RkcGJkd3lxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQzNjcxMDUsImV4cCI6MjAyOTk0MzEwNX0.yKp-tNgNR0UirxrqHT0TmPQBoRUaVhzf1rTef86ukRY"
+const supabaseUrl = 'https://lrquyravgthhihlevuqk.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxycXV5cmF2Z3RoaGlobGV2dXFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU0NDU3NTQsImV4cCI6MjAzMTAyMTc1NH0.zZTDxZCA5VJ82CTexj8oSW2WBiEZj2pPWFj3s-k15j8'
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 
@@ -23,7 +25,7 @@ require("../styles/globals.css")
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   // Can be set to 'devnet', 'testnet', or 'mainnet-beta'
-  const network = WalletAdapterNetwork.Devnet
+  const network = WalletAdapterNetwork.Mainnet
 
   // You can also provide a custom RPC endpoint
   const endpoint = useMemo(() => clusterApiUrl(network), [network])
@@ -40,7 +42,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
     async function getTodos() {
       
       const { data: wonka, error } = await supabase
-      .from('wonka')
+      .from('clickdb')
       .select('*')
 
       console.log(wonka)
@@ -66,7 +68,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
       />
 
       <ConnectionProvider endpoint={endpoint}>
-        <WalletProvider wallets={wallets}>
+        <WalletProvider wallets={wallets} autoConnect>
           <WalletModalProvider>
             <RootLayout>
               <Component {...pageProps} />
