@@ -1,11 +1,4 @@
 /* eslint-disa  le */
-import * as THREE from "three";
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
-import { UnrealBloomPass } from "@/components/TransparentBackgroundFixedUnrealBloomPass";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
-import Moon from '../components/Moon';
 // import Coin from '@/components/CoinClicker/CoinClicker';
 import {
   WalletNotConnectedError
