@@ -143,14 +143,14 @@ export default async function handler(
        const clty = new MongoClient(MONGODBURI)
        const usrCollection = clty.db("Clicker").collection("Users")
        
-       const currusr = JSON.stringify(req.body)
-       usry = JSON.parse(currusr)
-       const wlty = usry.wallet
-       console.log(usry.wallet)
+      //  const currusr = JSON.stringify(req.body)
+      //  usry = JSON.parse(currusr)
+       const wlty = req.body.wallet
+       console.log(wlty)
       //  
        const ucl = JSON.stringify(req.body)
        const cl = JSON.parse(ucl)
-       const userclicks = cl.clicks
+       const userclicks = req.body.clicks
       //  const lvl = cl.level
        
        
