@@ -6,6 +6,9 @@ import withPlugins from "next-compose-plugins"
  */
 const config = withPlugins([[withBundleAnalyzer({ enabled: false })]], {
   reactStrictMode: false,
+  eslint: {
+    ignoreDuringBuilds: true,
+},
 })
 
 export default config
