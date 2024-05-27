@@ -268,7 +268,7 @@ export default function HomePage() {
       </div>
 
 
-      {/* <Footer  /> */}
+      <Footer  />
     </div>
 
   )
