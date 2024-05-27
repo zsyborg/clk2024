@@ -106,8 +106,10 @@ export default function HomePage() {
   
   };
 
-  
-    initGame()
+    return () => {
+      
+      initGame()
+    };
   }, [clickCount, publicKey?.toBase58()]);
 
   

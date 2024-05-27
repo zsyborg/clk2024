@@ -164,14 +164,14 @@ export default function HomePage() {
   function solclick() {
     const finalclick = totalClick + 1
     settotalClick(finalclick);
-    console.log("Final Click" + finalclick)
+    console.log(finalclick)
     setEffect(true)
     setShowPlusOne(true)
     setIsGameReady(true);
     setSpin(true)
     let chkdata = {
       wallet: publicKey?.toBase58(),
-      clicks: finalclick
+      clicks: totalClick
     };
 
 
