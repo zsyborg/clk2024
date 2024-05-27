@@ -16,7 +16,7 @@ import { MongoClientOptions } from 'mongodb';
 
 
 // const MONGODBURI='mongodb+srv://techzasha:ridYVCRZnC5FUDr1@dharti.ctgvhra.mongodb.net/?retryWrites=true&w=majority'
-
+let usry = ""
 async function listDatabases(client: MongoClient){
   const db = client.db('Clicker')
   const coll = db.collection('Users')
@@ -144,8 +144,9 @@ export default async function handler(
        const usrCollection = clty.db("Clicker").collection("Users")
        
        const currusr = JSON.stringify(req.body)
-       const usry = JSON.parse(currusr)
+       usry = JSON.parse(currusr)
        const wlty = usry.wallet
+       console.log(usry.wallet)
       //  
        const ucl = JSON.stringify(req.body)
        const cl = JSON.parse(ucl)
